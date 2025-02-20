@@ -1,35 +1,25 @@
+using DataObjects;
 using UnityEngine;
-using Wallet;
 
 namespace UI.Wallet
 {
     public class WalletController : MonoBehaviour
     {
-        [SerializeField] private WalletView walletView;
-        [SerializeField] private int startingCoins;
-        
-        private WalletManager _walletManager;
-        
-        private void Awake()
-        {
-            _walletManager = new WalletManager(startingCoins);
-            _walletManager.OnCoinsChanged += walletView.UpdateCoinView;
-            _walletManager.Initialize();
-        }
-        
-        private void OnDestroy()
-        {
-            _walletManager.OnCoinsChanged -= walletView.UpdateCoinView;
-        }
-        
+        [SerializeField] private WalletSo walletSo;
+
         public void AddCoins(int amount)
         {
-            _walletManager.AddCoins(amount);
+            walletSo.AddCoins(amount);
         }
-         
+
         public void SpendCoins(int amount)
         {
-            _walletManager.SpendCoins(amount);
+            walletSo.SpendCoins(amount);
+        }
+
+        public void SetCoins(int amount)
+        {
+            walletSo.SetCoins(amount);
         }
     }
 }
