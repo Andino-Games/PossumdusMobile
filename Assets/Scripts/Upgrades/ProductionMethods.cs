@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class ProductionMethods : MonoBehaviour
 {
-    public int baseProduction = 10;
-    public float productionMultiplier = 1f;
+    public int baseProduction { get; private set; } = 10;
     public float productionInterval = 3f;
     [SerializeField] private int productionStored = 0;
 
@@ -22,15 +21,15 @@ public class ProductionMethods : MonoBehaviour
     }
     private void GenerateResources()
     {
-        int totalProduction = Mathf.RoundToInt(baseProduction * productionMultiplier);
-        productionStored += totalProduction;
-        Debug.Log($"{name} ha producido {totalProduction}. Acumulado: {productionStored}");
+        productionStored += baseProduction;
+        Debug.Log($"{name} ha producido {baseProduction}. Acumulado: {productionStored}");
 
     }
     public void IncreaseProduction(float multiplier)
     {
-        productionMultiplier *= multiplier;
+       baseProduction = Mathf.RoundToInt(baseProduction * multiplier);
     }
 }
 
-   
+
+

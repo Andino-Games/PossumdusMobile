@@ -6,7 +6,7 @@ public class ProductionView : MonoBehaviour
 {
     public TextMeshProUGUI resourceText;
 
-    private void Awake()
+    private void Start()
     {
         ProductionManager.instance.OnResourceUpdated += UpdateUI;
     }

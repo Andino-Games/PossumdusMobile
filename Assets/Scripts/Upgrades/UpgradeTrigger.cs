@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 public class UpgradeTrigger : MonoBehaviour
 {
     [Header("TapInteraction Info")]
-    [SerializeField]private bool isHolding = false;
-    [SerializeField]private float holdTime = 0f;
-    [SerializeField]private float holdDuration = 1f;
+    [SerializeField] private bool isHolding = false;
+    [SerializeField] private float holdTime = 0f;
+    [SerializeField] private float holdDuration = 1f;
 
     private void Update()
     {
@@ -15,7 +15,7 @@ public class UpgradeTrigger : MonoBehaviour
             holdTime += Time.deltaTime;
             if (holdTime >= holdDuration)
             {
-                OpenUpgradePanel();
+                UpgradePanel.instance.OpenUpgradePanel(GetComponent<UpgradeMethods>());
                 isHolding = false;
             }
         }
@@ -23,7 +23,7 @@ public class UpgradeTrigger : MonoBehaviour
     public void OnMouseDown()
     {
 
-        Debug.Log($"presionado {name}");
+        Debug.Log($"presionando {name}");
         isHolding = true;
         holdTime = 0f;
     }
@@ -32,9 +32,6 @@ public class UpgradeTrigger : MonoBehaviour
     {
         isHolding = false;
     }
-
-    public void OpenUpgradePanel()
-    {
-        UpgradeButtonAndPanel.instance.OpenUpgradePanel(GetComponent<UpgradeMethods>());
-    }
 }
+
+    

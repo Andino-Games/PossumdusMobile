@@ -10,24 +10,18 @@ public class UpgradeMethods : MonoBehaviour
     public float productionIncrement = 1.5f;
     public ProductionMethods targetProducer;
     public float currentCost => baseCost * Mathf.Pow(costMultiplier, level);
-    public void PurchaseUpgrade()
+
+    private void Awake()
     {
-        if (UpgradeManager.Instance.canAfford(currentCost))
-        {
-            UpgradeManager.Instance.SpendFibers(currentCost);
-            level++;
-            ApplyEffect();
-            Debug.Log($"{upgradeName} mejorado a nivel {level}");
-        }else
-        {
-            Debug.Log("No tienes suficientes Fibras Sintovivas para comprar esta mejora.");
-        }
+        targetProducer = GetComponent<ProductionMethods>();
     }
-    private void ApplyEffect()
+    public void ApplyEffect()
     {
         if(targetProducer != null)
         {
+            level++;
             targetProducer.IncreaseProduction(productionIncrement);
+            Debug.Log($"{upgradeName} mejorado a nivel {level}. Nueva producción: {targetProducer.baseProduction}");
         }
     }
 

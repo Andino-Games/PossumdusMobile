@@ -50,4 +50,10 @@ public class ProductionManager : MonoBehaviour
         fibersAmount += clickAmount;
         OnResourceUpdated?.Invoke(_fibersAmount);
     }
+
+    public void SpendFibers(float cost)
+    {
+        fibersAmount -= Mathf.RoundToInt(cost);
+        OnResourceUpdated?.Invoke(_fibersAmount);
+    }
 }

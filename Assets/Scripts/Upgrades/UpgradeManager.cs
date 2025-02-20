@@ -16,16 +16,19 @@ public class UpgradeManager : MonoBehaviour
         return ProductionManager.instance.fibersAmount >= amount;
     }
 
-    public void SpendFibers(float amount)
+    public void PurchaseUpgrade(UpgradeMethods upgrade)
     {
-        if(canAfford(amount))
+        if (UpgradeManager.Instance.canAfford(upgrade.currentCost))
         {
-            ProductionManager.instance.fibersAmount -= Mathf.RoundToInt(amount);
-        }else
+           ProductionManager.instance.SpendFibers(upgrade.currentCost);
+            upgrade.ApplyEffect();
+        }
+        else
         {
-            Debug.Log("No tienes suficientes Fibras Sintovivas");
+            Debug.Log("No tienes suficientes Fibras Sintovivas para comprar esta mejora.");
         }
     }
-
-
 }
+
+   
+    
