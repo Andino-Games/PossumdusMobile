@@ -3,31 +3,47 @@ using UnityEngine;
 
 public class ProductionMethods : MonoBehaviour
 {
-    public int baseProduction { get; private set; } = 10;
-    public float productionInterval = 3f;
-    [SerializeField] private int productionStored = 0;
+    public int baseFibersProduction { get; private set; } = 10;
+    public int baseTearsProduction { get; private set; } = 1;
+    public float fibersproductionInterval = 3f;
+    public float tearsProductionInterval = 5f;
+    [SerializeField] private int fibersProductionStored = 0;
+    [SerializeField] private int tearsProductionStored = 0;
 
     private void Start()
     {
-        InvokeRepeating(nameof(GenerateResources), productionInterval, productionInterval);
+        InvokeRepeating(nameof(GenerateFibers), fibersproductionInterval, fibersproductionInterval);
+        InvokeRepeating(nameof(GenerateTears), tearsProductionInterval, tearsProductionInterval);
     }
     private void OnMouseDown()
     {
-        if (productionStored > 0)
+        if (fibersProductionStored > 0)
         {
-            ProductionManager.instance.CollectFibersProduction(productionStored);
-            productionStored = 0;
+            ProductionManager.instance.CollectFibersProduction(fibersProductionStored);
+            fibersProductionStored = 0;
+        }
+        if(tearsProductionStored > 0)
+        {
+            ProductionManager.instance.CollectGaiaTearsProduction(tearsProductionStored);
+            tearsProductionStored = 0;
         }
     }
-    private void GenerateResources()
+    private void GenerateFibers()
     {
-        productionStored += baseProduction;
-        Debug.Log($"{name} ha producido {baseProduction}. Acumulado: {productionStored}");
+        fibersProductionStored += baseFibersProduction;
+        Debug.Log($"{name} ha producido {baseFibersProduction} fibras. Acumulado: {fibersProductionStored} fibras");
 
     }
-    public void IncreaseProduction(float multiplier)
+
+    private void GenerateTears()
     {
-       baseProduction = Mathf.RoundToInt(baseProduction * multiplier);
+        tearsProductionStored += baseTearsProduction;
+        Debug.Log($"{name} ha producido {baseTearsProduction} lagrimas. Acumulado: {tearsProductionStored} lagrimas");
+    }
+    public void IncreaseProduction(float fiberMultiplier, float tearsMultiplier)
+    {
+       baseFibersProduction = Mathf.RoundToInt(baseFibersProduction * fiberMultiplier);
+       baseTearsProduction = Mathf.RoundToInt(baseTearsProduction * tearsMultiplier);
     }
 }
 

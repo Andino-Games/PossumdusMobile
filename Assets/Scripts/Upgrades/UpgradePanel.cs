@@ -9,8 +9,10 @@ public class UpgradePanel : MonoBehaviour
 
     [Header("Panel Info")]
     public GameObject upgradePanel;
-    public Button upgradeButton;
-    public TextMeshProUGUI upgradeText;
+    public Button upgradeFibersButton;
+    public Button upgradeTearsButton;
+    public TextMeshProUGUI upgradeFibersText;
+    public TextMeshProUGUI upgradeTearsText;
     private void Awake()
     {
         if (instance == null)
@@ -24,30 +26,35 @@ public class UpgradePanel : MonoBehaviour
     {
         upgradePanel.SetActive(true);
         UpdateUpgradeInfo(upgrade);
-        upgradeButton.onClick.RemoveAllListeners();
-        upgradeButton.onClick.AddListener(() => TryUpgrade(upgrade));
+        upgradeFibersButton.onClick.RemoveAllListeners();
+        upgradeFibersButton.onClick.AddListener(() => TryUpgrade(upgrade, true));
+        upgradeTearsButton.onClick.RemoveAllListeners();
+        upgradeTearsButton.onClick.AddListener(() => TryUpgrade(upgrade, false));
     }
 
     public void CloseUpgradePanel()
     {
         upgradePanel.SetActive(false);
-        upgradeButton.onClick.RemoveAllListeners();
+        upgradeFibersButton.onClick.RemoveAllListeners();
+        upgradeTearsButton.onClick.RemoveAllListeners();
     }
 
     private void UpdateUpgradeInfo(UpgradeMethods upgrade)
     {
         if (upgrade != null)
         {
-            upgradeText.text = $"{upgrade.currentCost} FS";
-            upgradeButton.interactable = UpgradeManager.Instance.canAfford(upgrade.currentCost);
+            upgradeFibersText.text = $"{upgrade.currentCostFibers} FS";
+            upgradeTearsText.text = $"{upgrade.currentCostTears} LG";
+            upgradeFibersButton.interactable = UpgradeManager.Instance.canAfford(upgrade.currentCostFibers, 0);
+            upgradeTearsButton.interactable = UpgradeManager.Instance.canAfford(0, upgrade.currentCostTears);
         }
     }
 
-    public void TryUpgrade(UpgradeMethods upgrade)
+    public void TryUpgrade(UpgradeMethods upgrade, bool useFibers)
     {
         if (upgrade != null)
         {
-            UpgradeManager.Instance.PurchaseUpgrade(upgrade);
+            UpgradeManager.Instance.PurchaseUpgrade(upgrade, useFibers);
             UpdateUpgradeInfo(upgrade);
         }
     }

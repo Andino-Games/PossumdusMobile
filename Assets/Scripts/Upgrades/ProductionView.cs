@@ -4,15 +4,22 @@ using UnityEngine.UI;
 
 public class ProductionView : MonoBehaviour
 {
-    public TextMeshProUGUI resourceText;
+    public TextMeshProUGUI fibersText;
+    public TextMeshProUGUI tearsText;
 
     private void Start()
     {
-        ProductionManager.instance.OnResourceUpdated += UpdateUI;
+        ProductionManager.instance.OnFibersUpdated += UpdateFibersUI;
+        ProductionManager.instance.OnTearsUpdated += UpdateTearsUI;
     }
 
-    private void UpdateUI( int newAmount)
+    private void UpdateFibersUI( int newAmount)
     {
-        resourceText.text = $"{newAmount}";
+        fibersText.text = $"{newAmount}";
+    }
+
+    private void UpdateTearsUI(int newAmount)
+    {
+        tearsText.text = $"{newAmount}";
     }
 }

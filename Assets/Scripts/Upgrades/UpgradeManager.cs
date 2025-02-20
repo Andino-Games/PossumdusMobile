@@ -11,22 +11,34 @@ public class UpgradeManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public bool canAfford(float amount)
+    public bool canAfford(float fibersCost, float tearsCost)
     {
-        return ProductionManager.instance.fibersAmount >= amount;
+        return (fibersCost > 0 && ProductionManager.instance.fibersAmount >= fibersCost) || (tearsCost > 0 && ProductionManager.instance.gaiaTearsAmount >= tearsCost);
     }
 
-    public void PurchaseUpgrade(UpgradeMethods upgrade)
+    public void PurchaseUpgrade(UpgradeMethods upgrade, bool useFibers)
     {
-        if (UpgradeManager.Instance.canAfford(upgrade.currentCost))
+        if (useFibers && canAfford(upgrade.currentCostFibers, 0))
         {
-           ProductionManager.instance.SpendFibers(upgrade.currentCost);
+            ProductionManager.instance.SpendResources(upgrade.currentCostFibers, 0);
+            upgrade.level++;
+            upgrade.ApplyEffect();
+        }
+        else if (!useFibers && canAfford(0, upgrade.currentCostTears))
+        {
+            ProductionManager.instance.SpendResources(0, upgrade.currentCostTears);
+            upgrade.level++;
             upgrade.ApplyEffect();
         }
         else
         {
             Debug.Log("No tienes suficientes Fibras Sintovivas para comprar esta mejora.");
         }
+        /*if  (UpgradeManager.Instance.canAfford(upgrade.currentCostFibers, 0))
+        {
+           ProductionManager.instance.SpendFibers(upgrade.currentCostFibers);
+            upgrade.ApplyEffect();
+        }*/
     }
 }
 

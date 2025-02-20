@@ -5,11 +5,15 @@ public class UpgradeMethods : MonoBehaviour
     [Header("Upgrade Data")]
     public string upgradeName;
     public int level = 0;
-    public float baseCost = 100f;
-    public float costMultiplier = 1.2f;
-    public float productionIncrement = 1.5f;
+    public float baseCostFibers = 100f;
+    public float baseCostTears = 10f;
+    public float fibersCostMultiplier = 1.2f;
+    public float tearsCostMultiplier = 2f;
+    public float fibersProductionIncrement = 1.5f;
+    public float tearsProductionIncrmeent = 0.5f;
     public ProductionMethods targetProducer;
-    public float currentCost => baseCost * Mathf.Pow(costMultiplier, level);
+    public float currentCostFibers => baseCostFibers * Mathf.Pow(fibersCostMultiplier, level);
+    public float currentCostTears => baseCostTears * Mathf.Pow(tearsCostMultiplier, level);
 
     private void Awake()
     {
@@ -20,8 +24,8 @@ public class UpgradeMethods : MonoBehaviour
         if(targetProducer != null)
         {
             level++;
-            targetProducer.IncreaseProduction(productionIncrement);
-            Debug.Log($"{upgradeName} mejorado a nivel {level}. Nueva producción: {targetProducer.baseProduction}");
+            targetProducer.IncreaseProduction(fibersProductionIncrement, tearsProductionIncrmeent);
+            Debug.Log($"{upgradeName} mejorado a nivel {level}. Nueva producción: {targetProducer.baseFibersProduction}");
         }
     }
 

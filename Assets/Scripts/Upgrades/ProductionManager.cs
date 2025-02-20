@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class ProductionManager : MonoBehaviour
 {
-   public static ProductionManager instance;
-    public event Action<int> OnResourceUpdated;
+    public static ProductionManager instance;
+    public event Action<int> OnFibersUpdated;
+    public event Action<int> OnTearsUpdated;
     private int _fibersAmount;
     public int fibersAmount
     {
@@ -12,7 +13,7 @@ public class ProductionManager : MonoBehaviour
         set
         {
             _fibersAmount = Mathf.Max(0, value);
-            OnResourceUpdated?.Invoke(_fibersAmount);
+            OnFibersUpdated?.Invoke(_fibersAmount);
         }
     }
     private int _gaiaTearsAmount;
@@ -22,7 +23,7 @@ public class ProductionManager : MonoBehaviour
         set
         {
             _gaiaTearsAmount = Mathf.Max(0, value);
-            OnResourceUpdated?.Invoke(_gaiaTearsAmount);
+            OnTearsUpdated?.Invoke(_gaiaTearsAmount);
         }
     }
            
@@ -36,24 +37,25 @@ public class ProductionManager : MonoBehaviour
     public void CollectFibersProduction(int FibersAmount)
     {
         fibersAmount += FibersAmount;
-        OnResourceUpdated?.Invoke(_fibersAmount);
+        OnFibersUpdated?.Invoke(_fibersAmount);
     }
 
     public void CollectGaiaTearsProduction(int tearsAmount)
     {
         gaiaTearsAmount += tearsAmount;
-        OnResourceUpdated?.Invoke(_gaiaTearsAmount);
+        OnTearsUpdated?.Invoke(_gaiaTearsAmount);
     }
 
     public void CollectClickerProduction(int clickAmount)
     {
         fibersAmount += clickAmount;
-        OnResourceUpdated?.Invoke(_fibersAmount);
+        OnFibersUpdated?.Invoke(_fibersAmount);
     }
 
-    public void SpendFibers(float cost)
+    public void SpendResources(float fibersCost, float tearsCost)
     {
-        fibersAmount -= Mathf.RoundToInt(cost);
-        OnResourceUpdated?.Invoke(_fibersAmount);
+        fibersAmount -= Mathf.RoundToInt(fibersCost);
+        gaiaTearsAmount -= Mathf.RoundToInt(tearsCost);
+        OnFibersUpdated?.Invoke(_fibersAmount);
     }
 }
