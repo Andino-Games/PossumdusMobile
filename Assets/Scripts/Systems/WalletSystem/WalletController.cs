@@ -5,7 +5,7 @@ namespace UI.Wallet
 {
     public class WalletController : MonoBehaviour
     {
-        [SerializeField] private WalletSo walletSo;
+        [SerializeField] private WalletSO walletSo;
 
         public void AddCoins(int amount)
         {
