@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UpgradePanel : MonoBehaviour
+public class UpgradeView : MonoBehaviour
 {
-    public static UpgradePanel instance;
+    public static UpgradeView instance;
 
     [Header("Panel Info")]
     public GameObject upgradePanel;

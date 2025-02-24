@@ -15,7 +15,7 @@ public class UpgradeTrigger : MonoBehaviour
             holdTime += Time.deltaTime;
             if (holdTime >= holdDuration)
             {
-                UpgradePanel.instance.OpenUpgradePanel(GetComponent<UpgradeMethods>());
+                UpgradeView.instance.OpenUpgradePanel(GetComponent<UpgradeMethods>());
                 isHolding = false;
             }
         }
