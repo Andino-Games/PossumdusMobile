@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DataObjects
 {
     [CreateAssetMenu(fileName = "Coin", menuName = "Coin", order = 0)]
-    public class WalletSo : ScriptableObject
+    public class WalletSO : ScriptableObject
     {
         public event Action<int> OnValueChanged;
         

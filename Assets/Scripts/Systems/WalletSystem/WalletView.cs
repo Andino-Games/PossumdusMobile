@@ -6,7 +6,7 @@ namespace UI.Wallet
 {
     public class WalletView : MonoBehaviour
     {
-        [SerializeField] private WalletSo walletSo;
+        [SerializeField] private WalletSO walletSo;
         [SerializeField] private TextMeshProUGUI coinText;
 
         private void OnEnable()
