@@ -1,4 +1,4 @@
-using DataObjects;
+using Assets.Scripts.Systems.WalletSystem;
 using TMPro;
 using UnityEngine;
 
@@ -6,20 +6,36 @@ namespace UI.Wallet
 {
     public class WalletView : MonoBehaviour
     {
-        [SerializeField] private WalletSO walletSo;
-        [SerializeField] private TextMeshProUGUI coinText;
+        [SerializeField] private TextMeshProUGUI fibersText;
+        [SerializeField] private TextMeshProUGUI tearsText;
 
-        private void OnEnable()
+        private void Start()
         {
-            walletSo.OnValueChanged += UpdateCoinView;
-            UpdateCoinView(walletSo.amountCoin);
+            WalletService.Instance.OnFibersChanged += UpdateFibersView;
+            WalletService.Instance.OnTearsChanged += UpdateTearsView;
+            UpdateFibersView(WalletService.Instance.GetFibersAmount());
+            UpdateTearsView(WalletService.Instance.GetTearsAmount());
         }
-        
-        private void UpdateCoinView(int amount)
+
+        private void OnDisable()
         {
-            if (coinText != null)
+            WalletService.Instance.OnFibersChanged -= UpdateFibersView;
+            WalletService.Instance.OnTearsChanged -= UpdateTearsView;
+        }
+
+        private void UpdateFibersView(int amount)
+        {
+            if (fibersText != null)
             {
-                coinText.text = $"{walletSo.nameCoin}: {walletSo.amountCoin}";
+                fibersText.text = $"{amount}";
+            }
+        }
+
+        private void UpdateTearsView(int amount)
+        {
+            if (tearsText != null)
+            {
+                tearsText.text = $"{amount}";
             }
         }
     }

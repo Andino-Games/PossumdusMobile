@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
@@ -43,10 +42,10 @@ public class UpgradeView : MonoBehaviour
     {
         if (upgrade != null)
         {
-            upgradeFibersText.text = $"{upgrade.currentCostFibers} FS";
-            upgradeTearsText.text = $"{upgrade.currentCostTears} LG";
-            upgradeFibersButton.interactable = UpgradeManager.Instance.canAfford(upgrade.currentCostFibers, 0);
-            upgradeTearsButton.interactable = UpgradeManager.Instance.canAfford(0, upgrade.currentCostTears);
+            upgradeFibersText.text = $"{upgrade.CurrentCostFibers()} FS";
+            upgradeTearsText.text = $"{upgrade.CurrentCostTears()} LG";
+            upgradeFibersButton.interactable = UpgradeManager.Instance.CanAfford(upgrade.CurrentCostFibers(), 0);
+            upgradeTearsButton.interactable = UpgradeManager.Instance.CanAfford(0, upgrade.CurrentCostTears());
         }
     }
 
