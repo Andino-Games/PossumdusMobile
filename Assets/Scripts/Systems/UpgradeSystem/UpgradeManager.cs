@@ -9,7 +9,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        else Destroy(gameObject);
+        else Destroy(gameObject); 
     }
 
     public bool CanAfford(float fibersCost, float tearsCost)

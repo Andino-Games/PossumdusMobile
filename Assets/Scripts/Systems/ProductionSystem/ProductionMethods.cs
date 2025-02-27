@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class ProductionMethods : MonoBehaviour
 {
+    [Header("Production Data")]
     public int BaseFibersProduction { get; private set; } = 10;
     public int BaseTearsProduction { get; private set; } = 1;
-    public float fibersproductionInterval = 3f;
+    public float fibersProductionInterval = 3f;
     public float tearsProductionInterval = 5f;
     [SerializeField] private int fibersProductionStored = 0;
     [SerializeField] private int tearsProductionStored = 0;
 
     private void Start()
     {
-        InvokeRepeating(nameof(GenerateFibers), fibersproductionInterval, fibersproductionInterval);
+        InvokeRepeating(nameof(GenerateFibers), fibersProductionInterval, fibersProductionInterval);
         InvokeRepeating(nameof(GenerateTears), tearsProductionInterval, tearsProductionInterval);
     }
     private void OnMouseDown()

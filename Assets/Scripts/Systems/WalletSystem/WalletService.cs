@@ -5,20 +5,14 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems.WalletSystem
 {
-    public class WalletService:MonoBehaviour
+    public class WalletService: MonoBehaviour
     {
-        public static WalletService Instance;
+        public static WalletService Instance { get; private set; }
         [SerializeField]private WalletSO _walletFibers;
         [SerializeField]private WalletSO _walletTears;
 
         public event Action<int> OnFibersChanged;
         public event Action<int> OnTearsChanged;
-
-        public WalletService(WalletSO walletFibers, WalletSO walletTears)
-        {
-            _walletFibers = walletFibers;
-            _walletTears = walletTears;
-        }
 
         private void Awake()
         {

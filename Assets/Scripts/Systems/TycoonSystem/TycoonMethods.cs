@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class TycoonMethods : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Purchase Data")]
+    public GameObject tycoonElement;
+    public float baseCostFibers = 100f;
+    public float baseCostTears = 10f;
+    public float fibersCostMultiplier = 1.2f;
+    public float tearsCostMultiplier = 2f;
+    [SerializeField] private bool isActive;
+    public float CurrentCostFibers()
     {
-        
+        return baseCostFibers * Mathf.Pow(fibersCostMultiplier, TycoonManager.instance.GameProgress);
+    }
+    public float CurrentCostTears()
+    {
+        return baseCostTears * Mathf.Pow(tearsCostMultiplier, TycoonManager.instance.GameProgress);
+    }
+    
+    private void Start()
+    {
+        tycoonElement.SetActive(false);
+        TycoonManager.instance.RegisterTycoonElement(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ActivateElement() 
     {
-        
+        if(!isActive)
+        {
+            isActive = true;
+            tycoonElement.SetActive(true);
+            TycoonManager.instance.ActivateTycoonElement(this);
+        }
     }
 }

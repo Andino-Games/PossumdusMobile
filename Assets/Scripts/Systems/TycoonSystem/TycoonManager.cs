@@ -8,8 +8,14 @@ public class TycoonManager : MonoBehaviour
     public static TycoonManager instance;
     public List<TycoonMethods> allTycoonElements = new();
     public List<TycoonMethods> activatedTycoonElements = new();
+    private int _gameProgress { set; get; }
+    public int GameProgress 
+    { 
+       get { return _gameProgress; }
+        set { _gameProgress = value; }
+    }
     
-    public event Action<float> onProgressUpdated;
+    public event Action<int> OnProgressUpdated;
 
     private void Awake()
     {
@@ -41,7 +47,7 @@ public class TycoonManager : MonoBehaviour
 
     private void UpdateProgress()
     {
-        float progress = (float)activatedTycoonElements.Count/allTycoonElements.Count;
-        onProgressUpdated?.Invoke(progress);
+        int progress = (activatedTycoonElements.Count/allTycoonElements.Count);
+        OnProgressUpdated?.Invoke(progress);
     }
 }

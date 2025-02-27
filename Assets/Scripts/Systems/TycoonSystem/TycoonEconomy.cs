@@ -3,19 +3,40 @@ using UnityEngine;
 
 public class TycoonEconomy : MonoBehaviour
 {
-    public static bool CanAfford(int cost, WalletService service)
+    public static TycoonEconomy Instance;
+
+    private void Awake()
     {
-        return service.GetFibersAmount() >= cost;
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public static bool CanAfford(float fibersCost, float tearsCost)
+    {
+        return (fibersCost > 0 && WalletService.Instance.GetFibersAmount() >= fibersCost) || (tearsCost > 0 && WalletService.Instance.GetTearsAmount() >= tearsCost);
     }
 
-    public static bool TryPurchase(int cost, WalletService service)
+    public void PurchaseElement(TycoonMethods methods, bool useFibers)
     {
-        if(CanAfford(cost, service))
+        if (useFibers && CanAfford(methods.CurrentCostFibers(), 0))
         {
-            service.SpendFibers(cost);
-            return true;
+            WalletService.Instance.SpendFibers(Mathf.RoundToInt(methods.CurrentCostFibers()));
+            methods.ActivateElement();
         }
-        return false;
+        else if (!useFibers && CanAfford(0, methods.CurrentCostTears()))
+        {
+            WalletService.Instance.SpendTears(Mathf.RoundToInt(methods.CurrentCostTears()));
+            methods.ActivateElement();
+        }
+        else
+        {
+            Debug.Log("No tienes suficientes Fibras Sintovivas para comprar esta mejora.");
+        }
     }
 }
 

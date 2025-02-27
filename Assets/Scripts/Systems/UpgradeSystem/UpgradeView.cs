@@ -8,6 +8,7 @@ public class UpgradeView : MonoBehaviour
 
     [Header("Panel Info")]
     public GameObject upgradePanel;
+    public TextMeshProUGUI panelText;
     public Button upgradeFibersButton;
     public Button upgradeTearsButton;
     public TextMeshProUGUI upgradeFibersText;
@@ -19,6 +20,7 @@ public class UpgradeView : MonoBehaviour
         else Destroy(gameObject);
 
         upgradePanel.SetActive(false);
+        panelText.text = "Upgrade Machine";
     }
 
     public void OpenUpgradePanel(UpgradeMethods upgrade)
