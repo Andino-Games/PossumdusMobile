@@ -5,9 +5,9 @@ namespace Wallet
 {
     public class WalletService
     {
-        private readonly WalletSo _wallet;
+        private readonly WalletSO _wallet;
 
-        public WalletService(WalletSo walletSo)
+        public WalletService(WalletSO walletSo)
         {
             _wallet = walletSo;
         }
