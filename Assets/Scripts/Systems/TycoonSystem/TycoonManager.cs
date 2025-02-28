@@ -8,7 +8,7 @@ public class TycoonManager : MonoBehaviour
     public static TycoonManager instance;
     public List<TycoonMethods> allTycoonElements = new();
     public List<TycoonMethods> activatedTycoonElements = new();
-    private int _gameProgress { set; get; }
+    [SerializeField]private int _gameProgress { set; get; }
     public int GameProgress 
     { 
        get { return _gameProgress; }

@@ -1407,10 +1407,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9356071b5c3416845bc763cdcb5ee7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fibersProductionLimit: 200
+  tearsProductionLimit: 100
   fibersProductionInterval: 3
   tearsProductionInterval: 5
+  shutdownTime: 60
   fibersProductionStored: 0
   tearsProductionStored: 0
+  isProducing: 1
 --- !u!114 &1841894508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,6 +1435,7 @@ MonoBehaviour:
   tearsCostMultiplier: 2
   fibersProductionIncrement: 1.5
   tearsProductionIncrmeent: 0.5
+  storageExtraLimit: 10
   targetProducer: {fileID: 1841894507}
 --- !u!212 &1841894509
 SpriteRenderer:
@@ -1615,10 +1620,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9356071b5c3416845bc763cdcb5ee7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fibersProductionLimit: 0
+  tearsProductionLimit: 0
   fibersProductionInterval: 3
   tearsProductionInterval: 5
+  shutdownTime: 60
   fibersProductionStored: 0
   tearsProductionStored: 0
+  isProducing: 1
 --- !u!114 &1957044168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,6 +1648,7 @@ MonoBehaviour:
   tearsCostMultiplier: 2
   fibersProductionIncrement: 1.5
   tearsProductionIncrmeent: 0.5
+  storageExtraLimit: 10
   targetProducer: {fileID: 1957044167}
 --- !u!212 &1957044169
 SpriteRenderer:
@@ -2053,10 +2063,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9356071b5c3416845bc763cdcb5ee7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fibersProductionLimit: 0
+  tearsProductionLimit: 0
   fibersProductionInterval: 3
   tearsProductionInterval: 5
+  shutdownTime: 60
   fibersProductionStored: 0
   tearsProductionStored: 0
+  isProducing: 1
 --- !u!114 &2086726527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,6 +2091,7 @@ MonoBehaviour:
   tearsCostMultiplier: 2
   fibersProductionIncrement: 1.5
   tearsProductionIncrmeent: 0.5
+  storageExtraLimit: 10
   targetProducer: {fileID: 2086726526}
 --- !u!212 &2086726528
 SpriteRenderer:

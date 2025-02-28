@@ -11,6 +11,7 @@ public class UpgradeMethods : MonoBehaviour
     public float tearsCostMultiplier = 2f;
     public float fibersProductionIncrement = 1.5f;
     public float tearsProductionIncrmeent = 0.5f;
+    public int storageExtraLimit = 10;
     public ProductionMethods targetProducer;
     public float CurrentCostFibers()
     {
@@ -30,7 +31,7 @@ public class UpgradeMethods : MonoBehaviour
         if(targetProducer != null)
         {
             level++;
-            targetProducer.IncreaseProduction(fibersProductionIncrement, tearsProductionIncrmeent);
+            targetProducer.IncreaseProduction(fibersProductionIncrement, tearsProductionIncrmeent, storageExtraLimit);
             Debug.Log($"{upgradeName} mejorado a nivel {level}. Nueva producción: {targetProducer.BaseFibersProduction}");
         }
     }
