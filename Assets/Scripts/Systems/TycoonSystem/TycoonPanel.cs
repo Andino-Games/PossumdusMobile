@@ -24,13 +24,13 @@ public class TycoonPanel : MonoBehaviour
             Destroy(gameObject);
         }
         purchasePanel.SetActive(false);
-        panelText.text = "Purchase Machine";
     }
 
     public void OpenPanel(TycoonMethods tycoon)
     {
         if (tycoon != null)
         {
+            panelText.text = "Purchase Machine";
             purchasePanel.SetActive(true);
             buyFibersButton.onClick.RemoveAllListeners();
             buyTearsButton.onClick.RemoveAllListeners();
@@ -63,6 +63,11 @@ public class TycoonPanel : MonoBehaviour
         {
             TycoonEconomy.Instance.PurchaseElement(tycoon, useFibers);
             UpdatePurchaseInfo(tycoon);
+
+            if(tycoon.tycoonElement.activeSelf)
+            {
+                FindFirstObjectByType<TycoonTrigger>()?.DissapearAfterPurchase();
+            }
         }
     }
 }

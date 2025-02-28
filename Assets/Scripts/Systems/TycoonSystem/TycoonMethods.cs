@@ -20,8 +20,11 @@ public class TycoonMethods : MonoBehaviour
     
     private void Start()
     {
-        tycoonElement.SetActive(false);
-        TycoonManager.instance.RegisterTycoonElement(this);
+           TycoonManager.instance.RegisterTycoonElement(this);
+        if(isActive )
+        {
+            ActivateElement();
+        }
     }
 
     public void ActivateElement() 

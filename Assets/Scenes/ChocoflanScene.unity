@@ -1063,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 1378394261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94, y: -3.44, z: 0}
+  m_LocalPosition: {x: 1.04, y: -1.46, z: 0}
   m_LocalScale: {x: 0.5127447, y: 0.5127447, z: 0.5127447}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1136,6 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1a1c8a41f845e40a32147834f21286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  machineTarget: {fileID: 1841894514}
 --- !u!58 &1378394265
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1393,7 +1394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1841894507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1957044167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,7 +2040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2086726526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,7 +2301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885417574090003240, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 52.194687
+      value: 52.19458
       objectReference: {fileID: 0}
     - target: {fileID: 1885417574090003240, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2323,9 +2324,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 942128036}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 942128038}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClosePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TycoonPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905475472631193171, guid: b554438d79536404aaf45750a7ea9e06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

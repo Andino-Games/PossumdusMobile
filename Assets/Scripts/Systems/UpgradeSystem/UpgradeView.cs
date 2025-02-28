@@ -20,11 +20,11 @@ public class UpgradeView : MonoBehaviour
         else Destroy(gameObject);
 
         upgradePanel.SetActive(false);
-        panelText.text = "Upgrade Machine";
     }
 
     public void OpenUpgradePanel(UpgradeMethods upgrade)
     {
+        panelText.text = "Upgrade Machine";
         upgradePanel.SetActive(true);
         UpdateUpgradeInfo(upgrade);
         upgradeFibersButton.onClick.RemoveAllListeners();

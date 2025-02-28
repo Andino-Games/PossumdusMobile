@@ -47,7 +47,11 @@ public class TycoonManager : MonoBehaviour
 
     private void UpdateProgress()
     {
-        int progress = (activatedTycoonElements.Count/allTycoonElements.Count);
-        OnProgressUpdated?.Invoke(progress);
+       if(allTycoonElements.Count == 0)
+        {
+            return;
+        }
+       GameProgress = Mathf.RoundToInt((float) activatedTycoonElements.Count/allTycoonElements.Count * 100);
+        OnProgressUpdated?.Invoke(GameProgress);
     }
 }

@@ -2,21 +2,37 @@ using UnityEngine;
 
 public class TycoonTrigger : MonoBehaviour
 {
+    public TycoonMethods machineTarget;
     private bool isPressed;
 
-    private void Update()
+    private void Start()
     {
-        if (!isPressed)
+        if (machineTarget == null)
         {
-            TycoonPanel.instance.OpenPanel(GetComponent<TycoonMethods>());
-            isPressed = false;
+            Debug.Log($"El boton {name} no encuentra ninguna maquina vinculada");
         }
     }
 
     public void OnMouseDown()
     {
-        isPressed = true;
-        Debug.Log($"presionando {name}");
-      
+        if (!isPressed && machineTarget != null)
+        {
+            isPressed = true;
+            TycoonPanel.instance.OpenPanel(machineTarget);
+            Debug.Log($"presionando {name}, abriendo panel de compras para {machineTarget.name}");
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        isPressed = false;
+    }
+
+    public void DissapearAfterPurchase()
+    {
+        gameObject.SetActive(false);
     }
 }
+          
+    
+
