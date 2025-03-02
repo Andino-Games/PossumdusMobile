@@ -1,7 +1,7 @@
 using DataObjects;
 using UnityEngine;
 
-namespace UI.Wallet
+namespace Systems.WalletSystem
 {
     public class WalletController : MonoBehaviour
     {
