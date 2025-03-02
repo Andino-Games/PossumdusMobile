@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
@@ -9,6 +8,7 @@ public class UpgradeView : MonoBehaviour
 
     [Header("Panel Info")]
     public GameObject upgradePanel;
+    public TextMeshProUGUI panelText;
     public Button upgradeFibersButton;
     public Button upgradeTearsButton;
     public TextMeshProUGUI upgradeFibersText;
@@ -24,6 +24,7 @@ public class UpgradeView : MonoBehaviour
 
     public void OpenUpgradePanel(UpgradeMethods upgrade)
     {
+        panelText.text = "Upgrade Machine";
         upgradePanel.SetActive(true);
         UpdateUpgradeInfo(upgrade);
         upgradeFibersButton.onClick.RemoveAllListeners();
@@ -43,10 +44,10 @@ public class UpgradeView : MonoBehaviour
     {
         if (upgrade != null)
         {
-            upgradeFibersText.text = $"{upgrade.currentCostFibers} FS";
-            upgradeTearsText.text = $"{upgrade.currentCostTears} LG";
-            upgradeFibersButton.interactable = UpgradeManager.Instance.canAfford(upgrade.currentCostFibers, 0);
-            upgradeTearsButton.interactable = UpgradeManager.Instance.canAfford(0, upgrade.currentCostTears);
+            upgradeFibersText.text = $"{upgrade.CurrentCostFibers()} FS";
+            upgradeTearsText.text = $"{upgrade.CurrentCostTears()} LG";
+            upgradeFibersButton.interactable = UpgradeManager.Instance.CanAfford(upgrade.CurrentCostFibers(), 0);
+            upgradeTearsButton.interactable = UpgradeManager.Instance.CanAfford(0, upgrade.CurrentCostTears());
         }
     }
 

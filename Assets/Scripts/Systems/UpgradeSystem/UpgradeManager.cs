@@ -1,3 +1,4 @@
+using Assets.Scripts.Systems.WalletSystem;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
@@ -8,25 +9,25 @@ public class UpgradeManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        else Destroy(gameObject);
+        else Destroy(gameObject); 
     }
 
-    public bool canAfford(float fibersCost, float tearsCost)
+    public bool CanAfford(float fibersCost, float tearsCost)
     {
-        return (fibersCost > 0 && ProductionManager.instance.fibersAmount >= fibersCost) || (tearsCost > 0 && ProductionManager.instance.gaiaTearsAmount >= tearsCost);
+        return (fibersCost > 0 && WalletService.Instance.GetFibersAmount() >= fibersCost) || (tearsCost > 0 && WalletService.Instance.GetTearsAmount() >= tearsCost);
     }
 
     public void PurchaseUpgrade(UpgradeMethods upgrade, bool useFibers)
     {
-        if (useFibers && canAfford(upgrade.currentCostFibers, 0))
+        if (useFibers && CanAfford(upgrade.CurrentCostFibers(), 0))
         {
-            ProductionManager.instance.SpendResources(upgrade.currentCostFibers, 0);
+            WalletService.Instance.SpendFibers(Mathf.RoundToInt(upgrade.CurrentCostFibers()));
             upgrade.level++;
             upgrade.ApplyEffect();
         }
-        else if (!useFibers && canAfford(0, upgrade.currentCostTears))
+        else if (!useFibers && CanAfford(0, upgrade.CurrentCostTears()))
         {
-            ProductionManager.instance.SpendResources(0, upgrade.currentCostTears);
+            WalletService.Instance.SpendTears(Mathf.RoundToInt(upgrade.CurrentCostTears()));
             upgrade.level++;
             upgrade.ApplyEffect();
         }
@@ -34,13 +35,10 @@ public class UpgradeManager : MonoBehaviour
         {
             Debug.Log("No tienes suficientes Fibras Sintovivas para comprar esta mejora.");
         }
-        /*if  (UpgradeManager.Instance.canAfford(upgrade.currentCostFibers, 0))
-        {
-           ProductionManager.instance.SpendFibers(upgrade.currentCostFibers);
-            upgrade.ApplyEffect();
-        }*/
     }
 }
+
+       
 
    
     
