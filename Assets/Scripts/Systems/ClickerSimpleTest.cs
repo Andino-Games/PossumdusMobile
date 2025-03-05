@@ -1,3 +1,4 @@
+using Feel;
 using UnityEngine;
 
 public class ClickerSimpleTest : MonoBehaviour
@@ -6,11 +7,12 @@ public class ClickerSimpleTest : MonoBehaviour
     private void OnMouseDown()
     {
         AddResources();
+        FeelClickerEffects.Instance.PlayMoveFeedback();
+        Debug.Log("Hice Click :D");
     }
 
     public void AddResources()
     {
-
         ProductionManager.instance.CollectClickerProduction(fibersPerClick);
     }
 }

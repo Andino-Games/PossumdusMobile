@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1667dc1b-c915-4703-8ea9-7011e8a5ad0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/FeelTestScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/FeelTestScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemo/LightingData.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemo/LightingData.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemoSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemoSettings.lighting.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/WalletSystem/WalletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/WalletSystem/WalletController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wallet/WalletService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet/WalletService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Feel/FeelDemos/Blob/FeelBlob.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/FeelDemos/Blob/FeelBlob.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Feel/FeelDemos/CardsUI/Textures/Art/FeelCardsUI_FireproofRenderTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/FeelDemos/CardsUI/Textures/Art/FeelCardsUI_FireproofRenderTexture.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Feel/FeelDemos/CardsUI/Textures/Art/FeelCardsUI_LadyRenderTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/FeelDemos/CardsUI/Textures/Art/FeelCardsUI_LadyRenderTexture.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Feel/NiceVibrations/Demo/NiceVibrationsDemo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/FeelTest.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/FeelTest.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Feel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Feel/FeelClickerEffects.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Feel/FeelClickerEffects.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossumdusMobile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossumdusMobile/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FeelTestScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FeelTestScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ClickerSimpleTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ClickerSimpleTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.visualscripting@1.9.5/Runtime/VisualScripting.Core/Input/MouseButton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e5a634840fd4c6b9a0a867163b727ec1df200/4e/95435665/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -45,28 +39,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature-Feel",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature-Feel&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\danig\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\danig\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\danig\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\danig\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\danig\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\danig\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.38f1\Editor\Unity.exe" />
@@ -120,6 +114,8 @@
       <workItem from="1740028783214" duration="5829000" />
       <workItem from="1740166705081" duration="7208000" />
       <workItem from="1740759086483" duration="1151000" />
+      <workItem from="1740954627695" duration="7437000" />
+      <workItem from="1740970860686" duration="369000" />
     </task>
     <servers />
   </component>
