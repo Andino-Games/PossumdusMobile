@@ -16,6 +16,7 @@ public class TycoonManager : MonoBehaviour
     }
     
     public event Action<int> OnProgressUpdated;
+    public event Action OnActivatedMachine;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class TycoonManager : MonoBehaviour
         if(!activatedTycoonElements.Contains(element))
         {
             activatedTycoonElements.Add(element);
+            OnActivatedMachine?.Invoke();
             UpdateProgress();
         }
     }
